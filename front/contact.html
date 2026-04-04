@@ -1,0 +1,643 @@
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneTech - Contact Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="contact-info">
+              <div>
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+21612345678">+216 12 345 678</a>
+              </div>
+              <div>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:contact@onetech.tn">contact@onetech.tn</a>
+              </div>
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <span style="color: #fff">Tunis, Tunisia</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-end">
+            <div class="d-flex justify-content-end align-items-center gap-3">
+              <div>
+                <i class="bi bi-clock" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">Mon - Fri: 8:00 - 18:00</span>
+              </div>
+              <div>
+                <i class="bi bi-globe" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">English</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mainnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Headerrrrrrrrrrrrrrrrrrrrrrrr -->
+    <div class="main-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <a href="index.html" class="brand-logo">OneTech</a>
+          </div>
+          <div class="col-md-6">
+            <div class="search-container mx-auto">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search for products..."
+              />
+              <button class="search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-3 text-end">
+            <div class="d-flex justify-content-end gap-3">
+              <button class="btn" style="color: #fff">
+                <i class="bi bi-heart" style="font-size: 1.2rem"></i>
+                <span class="like-count">0</span>
+              </button>
+              <a href="/cart.html" class="btn" style="color: #fff">
+                <i class="bi bi-cart3" style="font-size: 1.2rem"></i>
+              </a>
+             <div class="user-menu" style="position: relative">
+                <button class="btn" id="user-icon-btn" style="color: #fff">
+                  <i class="bi bi-person" style="font-size: 1.2rem"></i>
+                </button>
+
+                <!-- Dropdown ( hidden) -->
+                <div
+                  id="user-dropdown"
+                  class="user-dropdown"
+                  style="
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background: white;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    z-index: 999;
+                    min-width: 200px;
+                  "
+                >
+                  <p id="user-name" style="margin: 0"></p>
+                  <p
+                    id="user-email"
+                    style="margin: 0; font-size: 0.9em; color: gray"
+                  ></p>
+                  <hr />
+                  <button id="logout-btn" class="btn btn-sm btn-outline-danger">
+                    Logout
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <a
+                      href="/add-product.html"
+                      style="text-decoration: none; color: gray"
+                      >Add Product</a
+                    >
+                  </button>
+                  <hr />
+                  <center>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <a
+                        href="/edit-product.html"
+                        style="text-decoration: none; color: gray"
+                        >Edit product</a
+                      >
+                    </button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: rgb(165, 42, 42); height: 5px"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="topdeals.html">Hot Deals</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <hr style="position: relative; top: 5px; bottom: 0px" />
+    <!-- carouselllllllllllllllllllllllllllllllllllllllllllll-->
+    <div
+      id="myCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="7000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img1.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+          />
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="img3.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+            alt="First Slide"
+          />
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="img2.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+            alt="Second Slide"
+          />
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button
+          class="custom-btn me-2"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          &#8592;
+        </button>
+        <button
+          id="buttontransfert"
+          class="custom-btn"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+    <!-- why ussssssssssssssssssssss-->
+
+    <section class="features-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5>Free Delivery</h5>
+              <p>Orders over $50</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-arrow-clockwise"></i>
+              </div>
+              <h5>Easy Returns</h5>
+              <p>30-day return policy</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5>Secure Payment</h5>
+              <p>100% secure checkout</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h5>24/7 Support</h5>
+              <p>Always here to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Hero -->
+    <div class="contact-hero">
+      <div class="hero-bg">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Let's Connect</h1>
+          <p class="hero-subtitle">
+            We'd love to hear from you. Get in touch with our team.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Cards Section -->
+    <section class="contact-cards">
+      <div class="container">
+        <div class="cards-grid">
+          <!-- Contact Form Card -->
+          <div class="contact-card form-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3>Send Message</h3>
+              <p>Drop us a line and we'll get back to you</p>
+            </div>
+
+            <form class="modern-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-field">
+                  <input type="text" id="name" name="name" required />
+                  <label for="name">Full Name</label>
+                  <div class="field-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <input type="email" id="email" name="email" required />
+                  <label for="email">Email Address</label>
+                  <div class="field-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <input type="tel" id="phone" name="phone" />
+                  <label for="phone">Phone Number</label>
+                  <div class="field-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field select-field">
+                  <select id="service" name="service" required>
+                    <option value=""></option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="sales">Sales & Products</option>
+                    <option value="partnership">Partnership</option>
+                  </select>
+                  <label for="service">Service Needed</label>
+                  <div class="field-border"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                  ></textarea>
+                  <label for="message">Your Message</label>
+                  <div class="field-border"></div>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <span class="btn-content">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-arrow">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </span>
+                </span>
+                <div class="btn-bg"></div>
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info Card -->
+          <div class="contact-card info-card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3>Get in Touch</h3>
+              <p>Find us on these platforms and locations</p>
+            </div>
+
+            <div class="contact-methods">
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <h4>Visit Us</h4>
+                  <p>123 Tech Avenue<br />Tunis, Tunisia 1000</p>
+                </div>
+              </div>
+
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                    />
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <h4>Call Us</h4>
+                  <p>+216 12 345 678<br />+216 98 765 432</p>
+                </div>
+              </div>
+
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <h4>Email Us</h4>
+                  <p>hello@onetech.tn<br />support@onetech.tn</p>
+                </div>
+              </div>
+
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <h4>Business Hours</h4>
+                  <p>Mon-Fri: 9AM-6PM<br />Sat: 10AM-4PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="social-connect">
+              <h4>Connect With Us</h4>
+              <div class="social-grid">
+                <a href="#" class="social-item">
+                  <div class="social-icon facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Facebook</span>
+                </a>
+
+                <a href="#" class="social-item">
+                  <div class="social-icon twitter">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Twitter</span>
+                </a>
+
+                <a href="#" class="social-item">
+                  <div class="social-icon instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Instagram</span>
+                </a>
+                <a href="#" class="social-item">
+                  <div class="social-icon linkedin">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      />
+                    </svg>
+                  </div>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- fooooooooooooooooooooooooooooooooooooooooooterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row g-4 pb-5">
+          <!-- Company Infoooooooooooooooooooooooooooooooooooooooo -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">OneTech</h3>
+              <p class="footer-description">
+                Your trusted partner for premium electronics and technology
+                solutions. We bring you the latest innovations at competitive
+                prices.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Categories</h4>
+              <ul class="footer-links">
+                <li><a href="#">Smartphones</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Accessories</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Customer Service</h4>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Track Order</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Get in Touch</h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <strong>Address</strong>
+                    <p>123 Tech Street, Tunis 1000<br />Tunisia</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <div>
+                    <strong>Phone</strong>
+                    <p>+216 12 345 678<br />+216 98 765 432</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <strong>Email</strong>
+                    <p>contact@onetech.tn<br />support@onetech.tn</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="copyright">
+                <p>
+                  &copy; 2025 OneTech. All rights reserved. | Designed with ❤️
+                  in Tunisia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="contact.js"></script>
+    
+
+  </body>
+</html>

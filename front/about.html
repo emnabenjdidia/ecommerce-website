@@ -1,0 +1,493 @@
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneTech - Top Deals</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="contact-info">
+              <div>
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+21612345678">+216 12 345 678</a>
+              </div>
+              <div>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:contact@onetech.tn">contact@onetech.tn</a>
+              </div>
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <span style="color: #fff">Tunis, Tunisia</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-end">
+            <div class="d-flex justify-content-end align-items-center gap-3">
+              <div>
+                <i class="bi bi-clock" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">Mon - Fri: 8:00 - 18:00</span>
+              </div>
+              <div>
+                <i class="bi bi-globe" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">English</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mainnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Headerrrrrrrrrrrrrrrrrrrrrrrr -->
+    <div class="main-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <a href="index.html" class="brand-logo">OneTech</a>
+          </div>
+          <div class="col-md-6">
+            <div class="search-container mx-auto">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search for products..."
+              />
+              <button class="search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-3 text-end">
+            <div class="d-flex justify-content-end gap-3">
+              <button class="btn" style="color: #fff">
+                <i class="bi bi-heart" style="font-size: 1.2rem"></i>
+                <span class="like-count">0</span>
+              </button>
+              <a href="/cart.html" class="btn" style="color: #fff">
+                <i class="bi bi-cart3" style="font-size: 1.2rem"></i>
+              </a>
+              <div class="user-menu" style="position: relative">
+                <button class="btn" id="user-icon-btn" style="color: #fff">
+                  <i class="bi bi-person" style="font-size: 1.2rem"></i>
+                </button>
+
+                <!-- Dropdown ( hidden) -->
+                <div
+                  id="user-dropdown"
+                  class="user-dropdown"
+                  style="
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background: white;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    z-index: 999;
+                    min-width: 200px;
+                  "
+                >
+                  <p id="user-name" style="margin: 0"></p>
+                  <p
+                    id="user-email"
+                    style="margin: 0; font-size: 0.9em; color: gray"
+                  ></p>
+                  <hr />
+                  <button id="logout-btn" class="btn btn-sm btn-outline-danger">
+                    Logout
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <a
+                      href="/add-product.html"
+                      style="text-decoration: none; color: gray"
+                      >Add Product</a
+                    >
+                  </button>
+                  <hr />
+                  <center>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <a
+                        href="/edit-product.html"
+                        style="text-decoration: none; color: gray"
+                        >Edit product</a
+                      >
+                    </button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: rgb(165, 42, 42); height: 5px"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="topdeals.html">Hot Deals</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <hr style="position: relative; top: 5px; bottom: 0px" />
+    <!-- carouselllllllllllllllllllllllllllllllllllllllllllll-->
+    <div
+      id="myCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="7000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img1.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+          />
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="img3.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+            alt="First Slide"
+          />
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="img2.jpg"
+            class="w-100"
+            style="height: 600px; object-fit: cover"
+            alt="Second Slide"
+          />
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button
+          class="custom-btn me-2"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          &#8592;
+        </button>
+        <button
+          id="buttontransfert"
+          class="custom-btn"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+    <!-- why ussssssssssssssssssssss-->
+
+    <section class="features-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5>Free Delivery</h5>
+              <p>Orders over $50</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-arrow-clockwise"></i>
+              </div>
+              <h5>Easy Returns</h5>
+              <p>30-day return policy</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5>Secure Payment</h5>
+              <p>100% secure checkout</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h5>24/7 Support</h5>
+              <p>Always here to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section About Us  -->
+    <section class="about-section container-fluid py-5">
+      <div class="container">
+        <h1>About Us</h1>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <p class="about-text">
+              Welcome to <strong>OneTech</strong> — your trusted online
+              destination for the latest in electronic devices. Whether you're
+              looking for the newest smartphones, high-performance laptops,
+              versatile tablets, or must-have accessories, we've got you
+              covered.
+            </p>
+            <p class="about-text">
+              Based in Tunis, Tunisia, OneTech is built on a passion for
+              innovation and technology. We're dedicated to providing
+              top-quality products at competitive prices, backed by excellent
+              customer service and fast delivery.
+            </p>
+            <p class="about-text">
+              Our mission is to simplify your tech shopping experience by
+              offering only reliable, efficient, and modern solutions for your
+              digital life.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="img1.jpg"
+              alt="About OneTech"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Team  -->
+    <section class="team-section container-fluid py-5">
+      <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="team-member">
+              <img src="photo2.png" class="team-img" alt="Founder" />
+              <h5 class="team-name">Sarah Ahmed</h5>
+              <p class="team-role">Founder & CEO</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="team-member">
+              <img src="photo2.png" class="team-img" alt="Tech Lead" />
+              <h5 class="team-name">Youssef Benali</h5>
+              <p class="team-role">Technical Lead</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="team-member">
+              <img src="photo3.jpg" class="team-img" alt="Support" />
+              <h5 class="team-name">Amira Khelifi</h5>
+              <p class="team-role">Customer Support Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <div class="newsletter-section">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="newsletter-content">
+            <h4>Stay Updated</h4>
+            <p>
+              Subscribe to our newsletter and get the latest deals and tech news
+              delivered to your inbox.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="newsletter-form">
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control newsletter-input"
+                placeholder="Enter your email address"
+              />
+              <button class="btn newsletter-btn" type="button">
+                <i class="bi bi-send"></i>
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fooooooooooooooooooooooooooooooooooooooooooterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row g-4 pb-5">
+          <!-- Company Infoooooooooooooooooooooooooooooooooooooooo -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">OneTech</h3>
+              <p class="footer-description">
+                Your trusted partner for premium electronics and technology
+                solutions. We bring you the latest innovations at competitive
+                prices.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Categories</h4>
+              <ul class="footer-links">
+                <li><a href="#">Smartphones</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Accessories</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Customer Service</h4>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Track Order</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Get in Touch</h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <strong>Address</strong>
+                    <p>123 Tech Street, Tunis 1000<br />Tunisia</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <div>
+                    <strong>Phone</strong>
+                    <p>+216 12 345 678<br />+216 98 765 432</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <strong>Email</strong>
+                    <p>contact@onetech.tn<br />support@onetech.tn</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="copyright">
+                <p>
+                  &copy; 2025 OneTech. All rights reserved. | Designed with ❤️
+                  in Tunisia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="contact.js"></script>
+  </body>
+</html>

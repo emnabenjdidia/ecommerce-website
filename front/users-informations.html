@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1><i class="fas fa-tachometer-alt me-3"></i>Admin Dashboard</h1>
+
+      <div class="dashboard-section">
+        <h2><i class="fas fa-chart-bar me-2"></i>Summary</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="summary-card">
+              <i class="fas fa-users"></i>
+              <h3 id="totalUsers">--</h3>
+              <p>Total Users</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="summary-card">
+              <i class="fas fa-shopping-bag"></i>
+              <h3 id="totalOrders">--</h3>
+              <p>Total Orders</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="summary-card">
+              <i class="fas fa-dollar-sign"></i>
+              <h3 id="totalRevenue">--</h3>
+              <p>Total Revenue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-section">
+        <div class="feature-box">
+          <h2><i class="fas fa-filter me-2"></i>Filter Orders</h2>
+          <form id="filterForm" class="filter-form">
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">Status:</label>
+                <select name="status" class="form-select">
+                  <option value="">All Statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="processing">Processing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">Start Date:</label>
+                <input type="date" name="startDate" class="form-control" />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">End Date:</label>
+                <input type="date" name="endDate" class="form-control" />
+              </div>
+              <div class="col-md-3 mb-3">
+                <button type="submit" class="custom-btn w-100">
+                  <i class="fas fa-search me-2"></i>Filter Orders
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div id="ordersLoading" class="loading" style="display: none">
+            <div class="spinner"></div>
+            <p>Loading orders...</p>
+          </div>
+          <div id="orders"></div>
+        </div>
+      </div>
+
+      
+      <div class="dashboard-section">
+        <div class="feature-box">
+          <h2><i class="fas fa-users-cog me-2"></i>Users with Orders</h2>
+          <div id="usersLoading" class="loading" style="display: none">
+            <div class="spinner"></div>
+            <p>Loading users...</p>
+          </div>
+          <div id="users"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const token = localStorage.getItem("token");
+
+      async function fetchSummary() {
+        try {
+          const res = await fetch("/api/admin/summary", {
+            headers: { Authorization: "Bearer " + token },
+          });
+          if (!res.ok) throw new Error(await res.text());
+          const data = await res.json();
+          document.getElementById("totalUsers").textContent =
+            data.totalUsers.toLocaleString();
+          document.getElementById("totalOrders").textContent =
+            data.totalOrders.toLocaleString();
+          document.getElementById(
+            "totalRevenue"
+          ).textContent = `$${data.totalRevenue.toLocaleString()}`;
+        } catch (err) {
+          console.error("Error fetching summary:", err);
+          document.getElementById("totalUsers").textContent =
+            document.getElementById("totalOrders").textContent =
+            document.getElementById("totalRevenue").textContent =
+              "Error";
+        }
+      }
+
+      async function fetchUsersWithOrders() {
+        const container = document.getElementById("users");
+        document.getElementById("usersLoading").style.display = "block";
+        try {
+          const res = await fetch("/api/admin/users-with-orders", {
+            headers: { Authorization: "Bearer " + token },
+          });
+          if (!res.ok) throw new Error(await res.text());
+          const data = await res.json();
+          if (!Array.isArray(data))
+            throw new Error("Unexpected response format");
+          container.innerHTML = data
+            .map(
+              (user) => `
+            <div class="user-card">
+              <div class="row align-items-center">
+                <div class="col-md-8">
+                  <h5 class="mb-2"><i class="fas fa-user me-2 text-muted"></i>${user.username}</h5>
+                  <p class="mb-1 text-muted"><i class="fas fa-envelope me-2"></i>${user.email}</p>
+                  <small class="text-muted"><i class="fas fa-shopping-cart me-1"></i>${user.orders.length} order(s)</small>
+                </div>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+        } catch (err) {
+          console.error("Error fetching users:", err);
+          container.innerHTML = `<p class="text-danger">${err.message}</p>`;
+        } finally {
+          document.getElementById("usersLoading").style.display = "none";
+        }
+      }
+
+      async function fetchFilteredOrders(params = {}) {
+        const container = document.getElementById("orders");
+        document.getElementById("ordersLoading").style.display = "block";
+        try {
+          const query = new URLSearchParams(params).toString();
+          const res = await fetch(`/api/admin/orders?${query}`, {
+            headers: { Authorization: "Bearer " + token },
+          });
+          if (!res.ok) throw new Error(await res.text());
+          const data = await res.json();
+          if (!Array.isArray(data))
+            throw new Error("Unexpected response format");
+
+          container.innerHTML = data
+            .map(
+              (order) => `
+            <div class="order-card">
+              <div class="order-header">
+                <div class="order-id"><i class="fas fa-receipt me-2"></i>Order #${
+                  order.id
+                }</div>
+                <div class="d-flex gap-2 align-items-center flex-wrap">
+                  <span class="status-badge status-${order.status}">${
+                order.status
+              }</span>
+                  <strong class="text-success">$${order.total}</strong>
+                  <span class="badge ${
+                    order.paymentStatus === "paid"
+                      ? "bg-success"
+                      : "bg-warning text-dark"
+                  }">
+    ${order.paymentStatus === "paid" ? "Paid" : "Unpaid"}
+</span>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="mb-2"><i class="fas fa-user me-2 text-muted"></i><strong>${
+                    order.user.username
+                  }</strong></p>
+                  <p class="mb-3 text-muted"><i class="fas fa-envelope me-2"></i>${
+                    order.user.email
+                  }</p>
+                  <div class="order-items">
+                    <strong class="d-block mb-2"><i class="fas fa-list me-2"></i>Items:</strong>
+                    <ul>${order.orderItems
+                      .map(
+                        (item) =>
+                          `<li>${item.product.name} × ${item.quantity}</li>`
+                      )
+                      .join("")}</ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Update Status:</label>
+                    <select class="form-select" onchange="updateStatus(${
+                      order.id
+                    }, this.value)">
+                      <option disabled selected>Change status</option>
+                      <option value="processing">Processing</option>
+                      <option value="shipped">Shipped</option>
+                      <option value="delivered">Delivered</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </div>
+                  <div class="d-flex gap-2 flex-wrap">
+    <button class="custom-btn custom-btn-sm" onclick="markAsPaid(${order.id})">
+        <i class="fas fa-credit-card me-1"></i>Mark as Paid
+    </button>
+    <button class="custom-btn custom-btn-sm" onclick="cancelOrder(${
+      order.id
+    })" style="background: #ffc107;">
+        <i class="fas fa-ban me-1"></i>Cancel Order
+    </button>
+    <button class="custom-btn custom-btn-sm" onclick="deleteOrder(${
+      order.id
+    })" style="background: #dc3545;">
+        <i class="fas fa-trash me-1"></i>Delete
+    </button>
+</div>
+
+                </div>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+        } catch (err) {
+          console.error("Error fetching orders:", err);
+          container.innerHTML = `<p class="text-danger">${err.message}</p>`;
+        } finally {
+          document.getElementById("ordersLoading").style.display = "none";
+        }
+      }
+
+      async function updateStatus(orderId, status) {
+        try {
+          const res = await fetch(`/api/admin/${orderId}/status`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({ status }),
+          });
+          if (!res.ok) throw new Error(await res.text());
+          fetchFilteredOrders(
+            new URLSearchParams(
+              new FormData(document.getElementById("filterForm"))
+            ).toString()
+          );
+        } catch (err) {
+          console.error("Status update error:", err);
+        }
+      }
+
+      async function markAsPaid(orderId) {
+        try {
+          const res = await fetch(`/api/admin/pay/${orderId}`, {
+            method: "PATCH",
+            headers: { Authorization: "Bearer " + token },
+          });
+          if (!res.ok) throw new Error(await res.text());
+          fetchFilteredOrders(
+            new URLSearchParams(
+              new FormData(document.getElementById("filterForm"))
+            ).toString()
+          );
+        } catch (err) {
+          console.error("Payment update error:", err);
+        }
+      }
+      async function cancelOrder(orderId) {
+        if (!confirm("Are you sure you want to cancel this order?")) return;
+
+        try {
+          const res = await fetch(`/api/orders/${orderId}/cancel`, {
+            method: "PATCH",
+            headers: {
+              Authorization: "Bearer " + token,
+              "Content-Type": "application/json",
+            },
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            alert(data.error || "Failed to cancel order.");
+          } else {
+            alert(data.message || "Order cancelled successfully.");
+            fetchFilteredOrders();
+          }
+        } catch (err) {
+          alert("Error cancelling order.");
+          console.error(err);
+        }
+      }
+
+      async function deleteOrder(orderId) {
+        if (!confirm("This will permanently delete the order. Continue?"))
+          return;
+
+        try {
+          const res = await fetch(`/api/orders/${orderId}`, {
+            method: "DELETE",
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            alert(data.error || "Failed to delete order.");
+          } else {
+            alert(data.message || "Order deleted successfully.");
+            fetchFilteredOrders();
+          }
+        } catch (err) {
+          alert("Error deleting order.");
+          console.error(err);
+        }
+      }
+
+      document.getElementById("filterForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const params = Object.fromEntries(new FormData(e.target).entries());
+        fetchFilteredOrders(params);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchSummary();
+        fetchUsersWithOrders();
+        fetchFilteredOrders();
+      });
+    </script>
+  </body>
+</html>

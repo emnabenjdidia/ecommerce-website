@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Product</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+    <style>
+      h2 {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        background: linear-gradient(
+          to right,
+          brown,
+          rgb(104, 24, 24),
+          rgb(58, 56, 85),
+          rgb(24, 23, 36)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        font-size: 40px;
+      }
+
+      .features-section {
+        padding: 60px 0;
+        background: linear-gradient(135deg, #f8f9fa, #fff);
+      }
+
+      .feature-box {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: var(--shadow-soft);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(165, 42, 42, 0.1);
+      }
+
+      .feature-box:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-primary);
+      }
+
+      .custom-btn {
+        background-color: brown;
+        color: #f0f0f0;
+        border: none;
+        font-size: 1rem;
+        padding: 12px 30px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .custom-btn:hover {
+        background-color: rgba(165, 42, 42, 0.8);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-primary);
+      }
+
+      .form-control {
+        border: 2px solid rgba(165, 42, 42, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-brown);
+        box-shadow: 0 0 0 0.25rem rgba(165, 42, 42, 0.25);
+        background: #fff;
+      }
+
+      .form-control::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .form-label {
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .form-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary-brown);
+        font-size: 18px;
+        z-index: 10;
+      }
+
+      .input-group {
+        position: relative;
+      }
+
+      .input-group .form-control {
+        padding-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="features-section">
+      <div class="container">
+        <h2 class="mb-5">Edit Product by Name</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="feature-box">
+              <form id="edit-product-form">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="name" class="form-label">
+                      <i class="fas fa-tag me-2"></i>Product Name (to find)
+                    </label>
+                    <div class="input-group">
+                      <i class="fas fa-box form-icon"></i>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter product name"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <label for="price" class="form-label">
+                      <i class="fas fa-dollar-sign me-2"></i>New Price
+                    </label>
+                    <div class="input-group">
+                      <i class="fas fa-money-bill form-icon"></i>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="price"
+                        placeholder="0.00"
+                        step="0.01"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <center>
+                  <div class="col-md-6 mb-4">
+                    <label for="quantity" class="form-label">
+                      <i class="fas fa-cubes me-2"></i>New Quantity
+                    </label>
+                    <div class="input-group">
+                      <i class="fas fa-sort-numeric-up form-icon"></i>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="quantity"
+                        placeholder="Enter quantity"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                </center>
+
+                <div class="mb-4">
+                  <label for="category" class="form-label">
+                    <i class="fas fa-tags me-2"></i>New Category
+                  </label>
+                  <div class="input-group">
+                    <i class="fas fa-tag form-icon"></i>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="category"
+                      placeholder="Enter product category"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="description" class="form-label">
+                    <i class="fas fa-align-left me-2"></i>New Description
+                  </label>
+                  <div class="input-group">
+                    <i class="fas fa-edit form-icon" style="top: 25px"></i>
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      rows="4"
+                      placeholder="Enter product description"
+                      style="padding-left: 50px; resize: vertical"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="imageFile" class="form-label">
+                    <i class="fas fa-image me-2"></i>New Image (optional)
+                  </label>
+                  <div class="input-group">
+                    <i class="fas fa-link form-icon"></i>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="imageFile"
+                      accept="image/*"
+                    />
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="custom-btn">
+                    <i class="fas fa-save me-2"></i>Update Product
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document
+        .getElementById("edit-product-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const token = localStorage.getItem("token");
+          if (!token) {
+            alert("You must be logged in as an admin.");
+            return;
+          }
+
+          const name = document.getElementById("name").value.trim();
+          const priceRaw = document.getElementById("price").value;
+          const quantityRaw = document.getElementById("quantity").value;
+          const description = document
+            .getElementById("description")
+            .value.trim();
+          const category = document.getElementById("category").value.trim();
+          const imageFile = document.getElementById("imageFile").files[0];
+
+          const formData = new FormData();
+          formData.append("name", name);
+          if (priceRaw) formData.append("price", parseFloat(priceRaw));
+          if (quantityRaw) formData.append("quantity", parseInt(quantityRaw));
+          if (category) formData.append("category", category);
+          if (description) formData.append("description", description);
+          if (imageFile) formData.append("image", imageFile);
+
+          try {
+            const res = await fetch("/api/products/update-by-name", {
+              method: "PUT",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              body: formData,
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+              alert("✅ Product updated successfully!");
+              window.location.href = "/index.html";
+            } else {
+              alert("❌ " + (data.error || "Update failed"));
+            }
+          } catch (err) {
+            console.error(err);
+            alert("Network or server error.");
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+    <style>
+      .custom-btn {
+        background-color: brown;
+        color: #f0f0f0;
+        border: none;
+        font-size: 1rem;
+        padding: 12px 30px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .custom-btn:hover {
+        background-color: rgba(165, 42, 42, 0.8);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="features-section">
+      <div class="container">
+        <h2 class="mb-5">
+          <i class="fas fa-shopping-cart me-3"></i>Shopping Cart
+        </h2>
+
+        <div id="loading-state" class="loading">
+          <div class="spinner"></div>
+          <p>Loading your cart...</p>
+        </div>
+
+        <div id="cart-container" style="display: none"></div>
+
+        <div id="cart-summary-container" style="display: none">
+          <div class="row">
+            <div class="col-lg-8">
+              <div id="cart-items-list"></div>
+            </div>
+            <div class="col-lg-4">
+              <div class="cart-summary">
+                <h4 class="mb-4">
+                  <i class="fas fa-receipt me-2"></i>Order Summary
+                </h4>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Subtotal:</span>
+                  <span id="subtotal">0 TND</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Shipping:</span>
+                  <span>Free</span>
+                </div>
+                <hr style="border-color: rgba(255, 255, 255, 0.2)" />
+                <div class="d-flex justify-content-between mb-4">
+                  <strong>Total:</strong>
+                  <strong id="total">0 TND</strong>
+                </div>
+                <button
+                  class="custom-btn w-100"
+                  id="checkoutBtn"
+                  style="position: relative"
+                >
+                  <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+                </button>
+
+                <button
+                  class="custom-btn w-100 mt-3"
+                  onclick="clearCart()"
+                  style="position: relative"
+                >
+                  <i class="fas fa-trash me-2"></i>Clear Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

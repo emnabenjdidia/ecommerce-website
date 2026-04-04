@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - OneTech</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo.png" type="image/png" sizes="180x180" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-header">
+          <h1>Welcome Back</h1>
+          <p>Sign in to continue to your account</p>
+        </div>
+
+        <div class="login-body">
+          <form id="loginForm" class="login-form">
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div class="remember-forgot">
+              <label> <input type="checkbox" /> Remember me </label>
+              <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+
+            <div class="social-login">
+              <p>Or continue with</p>
+              <div class="social-buttons">
+                <a href="#" class="social-btn google"
+                  ><i class="fab fa-google"></i
+                ></a>
+                <a href="#" class="social-btn facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-btn twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="register-link">
+              <p>
+                Don't have an account? <a href="register.html">Register here</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="login-footer">
+      <div class="container">
+        <p>
+          &copy; 2025 OneTech. All rights reserved. |
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="login.js"></script>
+  </body>
+</html>

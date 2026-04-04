@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneTech - Prouducts</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../logo.png" type="image/png" sizes="180x180" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="contact-info">
+              <div>
+                <i class="bi bi-telephone"></i>
+                <a href="tel:+21612345678">+216 12 345 678</a>
+              </div>
+              <div>
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:contact@onetech.tn">contact@onetech.tn</a>
+              </div>
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <span style="color: #fff">Tunis, Tunisia</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-end">
+            <div class="d-flex justify-content-end align-items-center gap-3">
+              <div>
+                <i class="bi bi-clock" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">Mon - Fri: 8:00 - 18:00</span>
+              </div>
+              <div>
+                <i class="bi bi-globe" style="color: var(--primary-brown)"></i>
+                <span style="color: #fff">English</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mainnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Headerrrrrrrrrrrrrrrrrrrrrrrr -->
+    <div class="main-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <a href="../index.html" class="brand-logo">OneTech</a>
+          </div>
+          <div class="col-md-6">
+            <div class="search-container mx-auto">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search for products..."
+              />
+              <button class="search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-3 text-end">
+            <div class="d-flex justify-content-end gap-3">
+              <button class="btn" style="color: #fff">
+                <i class="bi bi-heart" style="font-size: 1.2rem"></i>
+                <span class="like-count">0</span>
+              </button>
+              <a href="/cart.html" class="btn" style="color: #fff">
+                <i class="bi bi-cart3" style="font-size: 1.2rem"></i>
+              </a>
+              <div class="user-menu" style="position: relative">
+                <button class="btn" id="user-icon-btn" style="color: #fff">
+                  <i class="bi bi-person" style="font-size: 1.2rem"></i>
+                </button>
+
+                <!-- Dropdown ( hidden) -->
+                <div
+                  id="user-dropdown"
+                  class="user-dropdown"
+                  style="
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    background: white;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    z-index: 999;
+                    min-width: 200px;
+                  "
+                >
+                  <p id="user-name" style="margin: 0"></p>
+                  <p
+                    id="user-email"
+                    style="margin: 0; font-size: 0.9em; color: gray"
+                  ></p>
+                  <hr />
+                  <button id="logout-btn" class="btn btn-sm btn-outline-danger">
+                    Logout
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <a
+                      href="/add-product.html"
+                      style="text-decoration: none; color: gray"
+                      >Add Product</a
+                    >
+                  </button>
+                  <hr />
+                  <center>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <a
+                        href="/edit-product.html"
+                        style="text-decoration: none; color: gray"
+                        >Edit product</a
+                      >
+                    </button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background-color: rgb(165, 42, 42); height: 5px"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="topdeals.html">Hot Deals</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <hr style="position: relative; top: 5px; bottom: 0px" />
+    <!-- carouselllllllllllllllllllllllllllllllllllllllllllll-->
+    <div>
+      <img src="../img3.jpg" width="100%" />
+    </div>
+    <!-- why ussssssssssssssssssssss-->
+
+    <section class="features-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5>Free Delivery</h5>
+              <p>Orders over $50</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-arrow-clockwise"></i>
+              </div>
+              <h5>Easy Returns</h5>
+              <p>30-day return policy</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5>Secure Payment</h5>
+              <p>100% secure checkout</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-box animate-fade-in">
+              <div class="feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h5>24/7 Support</h5>
+              <p>Always here to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="hot-deal" class="section" style="margin-top: 7%">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="hot-deal">
+              <ul class="hot-deal-countdown">
+                <li>
+                  <div>
+                    <h3 id="Hdays"></h3>
+                    <span>Days</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3 id="Hhours"></h3>
+                    <span>Hours</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3 id="Hmins"></h3>
+                    <span>Mins</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3 id="Hsecs"></h3>
+                    <span>Secs</span>
+                  </div>
+                </li>
+              </ul>
+              <h2 class="text-uppercase">hot deal this week</h2>
+              <p>New Collection Up to 50% OFF</p>
+              <a class="primary-btn cta-btn" href="/topdeals.html"
+                ><button class="remise">Shop Now</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--                   produiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiitsssssssssssssssssss -->
+    <div class="container categories-showcase">
+      <!-- Section Header -->
+      <div class="section-header fade-in-up">
+        <h2>Explore Our Categories</h2>
+        <p>
+          Discover premium technology products carefully curated for your
+          digital lifestyle
+        </p>
+      </div>
+
+      <!-- Phones Category -->
+      <div class="row category-card fade-in-up">
+        <div class="col-lg-6">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=600&h=400&fit=crop"
+              alt="Phones"
+              class="category-image"
+            />
+            <div class="image-overlay">
+              <a href="phones.html" class="view-btn">
+                <i class="bi bi-phone"></i>
+                View Phones
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="category-content">
+            <h3 class="category-title">Smartphones</h3>
+            <p class="category-description">
+              Explore our wide selection of smartphones with powerful
+              processors, stunning cameras, and sleek designs. Whether you
+              prefer iOS or Android, find the perfect phone to stay connected in
+              style.
+            </p>
+            <div class="category-features">
+              <span class="feature-tag">Latest Models</span>
+              <span class="feature-tag">5G Ready</span>
+              <span class="feature-tag">Premium Cameras</span>
+              <span class="feature-tag">Fast Charging</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laptops Category -->
+      <div class="row category-card reverse fade-in-up">
+        <div class="col-lg-6 order-lg-2">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop"
+              alt="Laptops"
+              class="category-image"
+            />
+            <div class="image-overlay">
+              <a href="laptops.html" class="view-btn">
+                <i class="bi bi-laptop"></i>
+                View Laptops
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="category-content">
+            <h3 class="category-title">Laptops</h3>
+            <p class="category-description">
+              Discover powerful laptops for work, school, or gaming. From
+              ultrabooks to high-performance machines, find the device that fits
+              your productivity or entertainment needs.
+            </p>
+            <div class="category-features">
+              <span class="feature-tag">High Performance</span>
+              <span class="feature-tag">Ultra Portable</span>
+              <span class="feature-tag">Long Battery</span>
+              <span class="feature-tag">Gaming Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tablets Category -->
+      <div class="row category-card fade-in-up">
+        <div class="col-lg-6">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=400&fit=crop"
+              alt="Tablets"
+              class="category-image"
+            />
+            <div class="image-overlay">
+              <a href="tablets.html" class="view-btn">
+                <i class="bi bi-tablet"></i>
+                View Tablets
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="category-content">
+            <h3 class="category-title">Tablets</h3>
+            <p class="category-description">
+              Browse our latest tablets—perfect for reading, browsing, drawing,
+              or streaming. Lightweight and versatile, they bridge the gap
+              between phone and laptop.
+            </p>
+            <div class="category-features">
+              <span class="feature-tag">Touch Screen</span>
+              <span class="feature-tag">Stylus Support</span>
+              <span class="feature-tag">Lightweight</span>
+              <span class="feature-tag">All-Day Battery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessories Category -->
+      <div class="row category-card reverse fade-in-up">
+        <div class="col-lg-6 order-lg-2">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=400&fit=crop"
+              alt="Accessories"
+              class="category-image"
+            />
+            <div class="image-overlay">
+              <a href="accessories.html" class="view-btn">
+                <i class="bi bi-headphones"></i>
+                View Accessories
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="category-content">
+            <h3 class="category-title">Accessories</h3>
+            <p class="category-description">
+              Complete your setup with accessories like headphones, chargers,
+              phone cases, and more. Stylish, practical, and designed to
+              complement your devices.
+            </p>
+            <div class="category-features">
+              <span class="feature-tag">Premium Quality</span>
+              <span class="feature-tag">Wireless Tech</span>
+              <span class="feature-tag">Protective Gear</span>
+              <span class="feature-tag">Fast Charging</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fooooooooooooooooooooooooooooooooooooooooooterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row g-4 pb-5">
+          <!-- Company Infoooooooooooooooooooooooooooooooooooooooo -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">OneTech</h3>
+              <p class="footer-description">
+                Your trusted partner for premium electronics and technology
+                solutions. We bring you the latest innovations at competitive
+                prices.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Categories</h4>
+              <ul class="footer-links">
+                <li><a href="#">Smartphones</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Accessories</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Customer Service</h4>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Track Order</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Get in Touch</h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <strong>Address</strong>
+                    <p>123 Tech Street, Tunis 1000<br />Tunisia</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <div>
+                    <strong>Phone</strong>
+                    <p>+216 12 345 678<br />+216 98 765 432</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <strong>Email</strong>
+                    <p>contact@onetech.tn<br />support@onetech.tn</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="copyright">
+                <p>
+                  &copy; 2025 OneTech. All rights reserved. | Designed with ❤️
+                  in Tunisia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="contact.js"></script>
+    <script>
+      const countDown = document.querySelectorAll(".countdown");
+      const deadline = new Date("2025-08-31T23:59:59").getTime();
+
+      const updateCountDown = () => {
+        const now = new Date().getTime();
+        const timeLeft = deadline - now;
+
+        if (timeLeft < 0) {
+          clearInterval(interval);
+          return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        const list = [`${days}`, `${hours}`, `${minutes}`, `${seconds}`];
+        let i = 0;
+        countDown.forEach((element) => {
+          element.innerHTML = `<p class="editcountdown">${list[i]}</p>`;
+          i++;
+        });
+        document.getElementById("Hdays").innerHTML = days;
+        document.getElementById("Hhours").innerHTML = hours;
+        document.getElementById("Hmins").innerHTML = minutes;
+        document.getElementById("Hsecs").innerHTML = seconds;
+      };
+
+      const interval = setInterval(updateCountDown, 1000);
+      updateCountDown();
+
+      // Product icon interaction
+      document.querySelectorAll(".product-icon").forEach((icon) => {
+        icon.addEventListener("click", function () {
+          this.style.transform = "scale(1.2)";
+          setTimeout(() => {
+            this.style.transform = "";
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>
